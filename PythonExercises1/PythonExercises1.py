@@ -70,25 +70,91 @@
 
 #Question: Input a certain year, month and day, and determine which day of the year it is?
 
-def calculate_days():
-    year = int(input('year: '))
-    month = int(input('month: '))
-    day = int(input('day: '))
-    month_day = (0,31,59,90,120,151,181,212,243,273,304,334)
+# def calculate_days():
+#     year = int(input('year: '))
+#     month = int(input('month: '))
+#     day = int(input('day: '))
+#     month_day = (0,31,59,90,120,151,181,212,243,273,304,334)
 
-    if 0 < month <= 12:
-        which_day = month_day[month - 1]
-    else:
-        print ('Month must be between 1 and 12')
-        return
+#     if 0 < month <= 12:
+#         which_day = month_day[month - 1]
+#     else:
+#         print ('Month must be between 1 and 12')
+#         return
 
-    which_day += day
+#     which_day += day
 
-    if (year % 400 == 0) or (year % 4 == 0) and (year %100 != 0):
-        if month > 2:
-          which_day += 1
+#     if (year % 400 == 0) or (year % 4 == 0) and (year %100 != 0):
+#         if month > 2:
+#           which_day += 1
     
-    print(f"It is the {which_day}th day of the year.")
-    return which_day
+#     print(f"It is the {which_day}th day of the year.")
+#     return which_day
 
-calculate_days()
+# calculate_days()
+
+#------------------------------------------------------------------
+
+# Question: Fibonacci sequence.
+
+# Program analysis: Fibonacci sequence, also known as the golden section sequence, refers to a sequence of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+# In mathematics, the Fibonacci sequence is defined recursively:
+
+# F0 = 0 (n=0)
+
+# F1 = 1 (n=1)
+
+# Fn = F[n-1]+ F[n-2](n=>2)
+
+# def fib(n):
+#     a,b=1,1
+        
+#     for i in range(n-1):
+#         a,b = b,a+b
+#     return a
+
+# n = int(input('n: '))
+# print (fib(n))
+
+#------------------------------------------------------------------
+
+# Question: Copies the data of one list to another list.
+
+# Program analysis: Using list[:].
+
+# a = [1, 2, 3]
+# a.append([4, 5])  # 添加一个列表作为元素
+# print(a)  # 输出: [1, 2, 3, [4, 5]]，列表作为单个元素被添加
+# a = [1, 2, 3]
+# a.extend([4, 5])  # 将 [4, 5] 中的每个元素逐一添加
+# print(a)  # 输出: [1, 2, 3, 4, 5]
+
+
+# a = [1, 2, 3]
+# b = a[:]
+# print (f'b = {b}')
+
+#------------------------------------------------------------------
+
+# Question: Output 9*9 multiplication table.
+
+# for i in range(1, 10):
+#     print() #new line = \n
+#     for j in range(1, i+1):
+#         print ("%d*%d=%d" % (i, j, i*j), end=" " )
+                
+#------------------------------------------------------------------
+
+# Question: Pause output for one second
+
+# import time
+
+# myD = {1: 'a', 2: 'b'}
+# for key, value in dict.items(myD):
+#     print(key, value)
+#     time.sleep(1)
+                
+#------------------------------------------------------------------
+
+# Question: 
