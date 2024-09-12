@@ -1,5 +1,5 @@
 ﻿
-#Question: There are four numbers: 1, 2, 3, 4. How many different three-digit numbers can be formed without repeated numbers? What are the numbers?
+# 1 Question: There are four numbers: 1, 2, 3, 4. How many different three-digit numbers can be formed without repeated numbers? What are the numbers?
 
 # for i in range(1,5):
 #     for j in range(1,5):
@@ -9,7 +9,7 @@
 
 #------------------------------------------------------------------
 
-#Question: The bonuses issued by the company are based on profit commission. When the profit (I) is less than or equal to 100,000, the bonus can be increased by 10%; when the profit is higher than 100,000 and lower than 200,000, the portion below 100,000 is increased by 10% and the portion above 100,000 is increased by 7.5%; when the profit is between 200,000 and 400,000, the portion above 200,000 is increased by 5%; when the profit is between 400,000 and 600,000, the portion above 400,000 is increased by 3%; when the profit is between 600,000 and 1 million, the portion above 600,000 is increased by 1.5% and when the profit is higher than 1 million, the portion above 1 million is increased by 1%. Enter the profit I of the month from the keyboard and calculate the total amount of bonuses that should be issued?
+# 2 Question: The bonuses issued by the company are based on profit commission. When the profit (I) is less than or equal to 100,000, the bonus can be increased by 10%; when the profit is higher than 100,000 and lower than 200,000, the portion below 100,000 is increased by 10% and the portion above 100,000 is increased by 7.5%; when the profit is between 200,000 and 400,000, the portion above 200,000 is increased by 5%; when the profit is between 400,000 and 600,000, the portion above 400,000 is increased by 3%; when the profit is between 600,000 and 1 million, the portion above 600,000 is increased by 1.5% and when the profit is higher than 1 million, the portion above 1 million is increased by 1%. Enter the profit I of the month from the keyboard and calculate the total amount of bonuses that should be issued?
 
 # def calculate_bonus(net_profit):
 #     net_profit_range = [1000000, 600000, 400000, 200000, 100000, 0]
@@ -29,7 +29,7 @@
 
 #------------------------------------------------------------------
 
-#Question: An integer, when adding 100, it is a perfect square number, and when adding 168, it is another perfect square number. What is the integer?
+# 3 Question: An integer, when adding 100, it is a perfect square number, and when adding 168, it is another perfect square number. What is the integer?
 
 # Program analysis:
 
@@ -68,7 +68,7 @@
 
 #------------------------------------------------------------------
 
-#Question: Input a certain year, month and day, and determine which day of the year it is?
+# 4 Question: Input a certain year, month and day, and determine which day of the year it is?
 
 # def calculate_days():
 #     year = int(input('year: '))
@@ -95,7 +95,7 @@
 
 #------------------------------------------------------------------
 
-# Question: Fibonacci sequence.
+# 5 Question: Fibonacci sequence.
 
 # Program analysis: Fibonacci sequence, also known as the golden section sequence, refers to a sequence of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
@@ -119,7 +119,7 @@
 
 #------------------------------------------------------------------
 
-# Question: Copies the data of one list to another list.
+# 6 Question: Copies the data of one numbers to another list.
 
 # Program analysis: Using list[:].
 
@@ -137,7 +137,7 @@
 
 #------------------------------------------------------------------
 
-# Question: Output 9*9 multiplication table.
+# 7 Question: Output 9*9 multiplication table.
 
 # for i in range(1, 10):
 #     print() #new line = \n
@@ -146,7 +146,7 @@
                 
 #------------------------------------------------------------------
 
-# Question: Pause output for one second
+# 8 Question: Pause output for one second
 
 # import time
 
@@ -157,4 +157,26 @@
                 
 #------------------------------------------------------------------
 
-# Question: 
+# 9 Question: Input three integers x, y, z, and output them from small to large.
+
+# numbers = []
+# for i in range (3):
+#     x = int(input('Integers: \n'))
+#     numbers.append(x)
+
+# numbers.sort()
+# print (numbers)
+               
+#------------------------------------------------------------------
+
+# 10 Question: Pause the output for 5 seconds and format the current time.
+
+# import time
+
+# print (time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+# time.sleep(10)
+# print (time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+               
+#------------------------------------------------------------------
+
+# 11 Question:
