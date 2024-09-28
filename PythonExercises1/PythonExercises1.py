@@ -9,7 +9,12 @@
 
 #------------------------------------------------------------------
 
-# 2 Question: The bonuses issued by the company are based on profit commission. When the profit (I) is less than or equal to 100,000, the bonus can be increased by 10%; when the profit is higher than 100,000 and lower than 200,000, the portion below 100,000 is increased by 10% and the portion above 100,000 is increased by 7.5%; when the profit is between 200,000 and 400,000, the portion above 200,000 is increased by 5%; when the profit is between 400,000 and 600,000, the portion above 400,000 is increased by 3%; when the profit is between 600,000 and 1 million, the portion above 600,000 is increased by 1.5% and when the profit is higher than 1 million, the portion above 1 million is increased by 1%. Enter the profit I of the month from the keyboard and calculate the total amount of bonuses that should be issued?
+# 2 Question: The bonuses issued by the company are based on profit commission. When the profit (I) is less than or equal
+# to 100,000, the bonus can be increased by 10%; when the profit is higher than 100,000 and lower than 200,000, the portion
+# below 100,000 is increased by 10% and the portion above 100,000 is increased by 7.5%; when the profit is between 200,000 and 400,000,
+# the portion above 200,000 is increased by 5%; when the profit is between 400,000 and 600,000, the portion above 400,000 is increased by 3%;
+# when the profit is between 600,000 and 1 million, the portion above 600,000 is increased by 1.5% and when the profit is higher than 1 million,
+# the portion above 1 million is increased by 1%. Enter the profit I of the month from the keyboard and calculate the total amount of bonuses that should be issued?
 
 # def calculate_bonus(net_profit):
 #     net_profit_range = [1000000, 600000, 400000, 200000, 100000, 0]
@@ -49,7 +54,9 @@
 
 # 7. Next, loop through all the numbers of i.
 
-# Floating point numbers (i.e. decimals) are not always represented exactly in Python. Because computers store numbers in binary, some decimal fractions cannot be stored exactly as binary numbers, which can cause precision issues. Floating point operations may produce approximate values ​​rather than exact values, especially when performing operations such as square roots.
+# Floating point numbers (i.e. decimals) are not always represented exactly in Python. Because computers store numbers
+# in binary, some decimal fractions cannot be stored exactly as binary numbers, which can cause precision issues.
+# Floating point operations may produce approximate values ​​rather than exact values, especially when performing operations such as square roots.
 
 # import math
 # def find_integer():
@@ -84,7 +91,7 @@
 
 #     which_day += day
 
-#     if (year % 400 == 0) or (year % 4 == 0) and (year %100 != 0):
+#     if (year % 4 == 0) and (year %100 != 0) or (year % 400 == 0): # 'and' has higher priority than 'or'
 #         if month > 2:
 #           which_day += 1
     
@@ -179,4 +186,78 @@
                
 #------------------------------------------------------------------
 
-# 11 Question:
+# 11 Question: There is a pair of rabbits. From the third month after birth, they give birth to a pair of rabbits every
+# month. After the third month, the little rabbits give birth to another pair of rabbits every month.
+# If none of the rabbits die, how many rabbits will there be in total each month?
+# Program analysis: The pattern of rabbits is the sequence 1,1,2,3,5,8,13,21....
+
+# while True:
+#     months = input("Enter the number of months: ")
+#     if months.isdigit() and int(months) > 0:
+#         months = int(months)
+#         break
+#     else:
+#         print("Please enter a valid positive integer.")
+#
+# p1 = 1
+# p2 = 2
+# for i in range(1, months + 1):
+#     print(f'{p1:12d} {p2:12d}', end=" ")
+#     if (i % 3) == 0:
+#         print('')  # wrapping every 3 lines
+#     p1 = p1 + p2
+#     p2 = p1 + p2
+
+# ------------------------------------------------------------------
+
+# 12 Question: Determine how many prime numbers there are between 101-200, and output all prime numbers.
+# # Program analysis: Method to determine prime numbers: Use a number to divide 2 to sqrt (this number) respectively.
+# If it can be divided by an integer, it means that this number is not a prime number, otherwise it is a prime number.
+# update to determine how many prime numbers there are between 101 to entered number.
+
+# import math
+#
+# while True:
+#     prime_number = input("Enter the number: ")
+#     if prime_number.isdigit() and int(prime_number) > 101:
+#         prime_number = int(prime_number)
+#         break
+#     else:
+#         print("Please enter a valid positive integer larger than 101.")
+#
+# # define a variable to count how many prime numbers
+# leap = 0
+#
+# # 遍历 101 到 prime_number 之间的所有数，检查是否是素数
+# for i in range(101, prime_number + 1):
+#     is_prime = True  # 假设当前数是素数
+#     for j in range(2, int(math.sqrt(i)) + 1):
+#         if i % j == 0:
+#             is_prime = False  # 该数能被 j 整除，所以不是素数
+#             break  # 找到一个因数就可以停止检查
+#     if is_prime:  # 如果该数是素数
+#         print(f'{i:6d}', end=' ')
+#         leap += 1
+#         if leap % 10 == 0:  # 每10个素数换行
+#             print('')
+#
+# # 输出结果
+# print(f'\nThere are {leap} prime numbers between 101 and {prime_number}.')
+
+# ------------------------------------------------------------------
+
+# 13 Question:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
