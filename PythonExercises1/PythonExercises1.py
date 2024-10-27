@@ -1,5 +1,4 @@
-﻿
-# 1 Question: There are four numbers: 1, 2, 3, 4. How many different three-digit numbers can be formed without repeated numbers? What are the numbers?
+﻿# 1 Question: There are four numbers: 1, 2, 3, 4. How many different three-digit numbers can be formed without repeated numbers? What are the numbers?
 
 # for i in range(1,5):
 #     for j in range(1,5):
@@ -7,7 +6,7 @@
 #             if (i != k) and (i != j) and (j != k):
 #                 print (i,j,k)
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 2 Question: The bonuses issued by the company are based on profit commission. When the profit (I) is less than or equal
 # to 100,000, the bonus can be increased by 10%; when the profit is higher than 100,000 and lower than 200,000, the portion
@@ -32,7 +31,7 @@
 # total_bonus = calculate_bonus(net_profit)
 # print(f"Total bonus: {total_bonus}")
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 3 Question: An integer, when adding 100, it is a perfect square number, and when adding 168, it is another perfect square number. What is the integer?
 
@@ -73,7 +72,7 @@
 
 # find_integer()
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 4 Question: Input a certain year, month and day, and determine which day of the year it is?
 
@@ -94,13 +93,13 @@
 #     if (year % 4 == 0) and (year %100 != 0) or (year % 400 == 0): # 'and' has higher priority than 'or'
 #         if month > 2:
 #           which_day += 1
-    
+
 #     print(f"It is the {which_day}th day of the year.")
 #     return which_day
 
 # calculate_days()
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 5 Question: Fibonacci sequence.
 
@@ -116,7 +115,7 @@
 
 # def fib(n):
 #     a,b=1,1
-        
+
 #     for i in range(n-1):
 #         a,b = b,a+b
 #     return a
@@ -124,7 +123,7 @@
 # n = int(input('n: '))
 # print (fib(n))
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 6 Question: Copies the data of one numbers to another list.
 
@@ -142,7 +141,7 @@
 # b = a[:]
 # print (f'b = {b}')
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # 7 Question: Output 9*9 multiplication table.
 
@@ -150,8 +149,8 @@
 #     print() #new line = \n
 #     for j in range(1, i+1):
 #         print ("%d*%d=%d" % (i, j, i*j), end=" " )
-                
-#------------------------------------------------------------------
+
+# ------------------------------------------------------------------
 
 # 8 Question: Pause output for one second
 
@@ -161,8 +160,8 @@
 # for key, value in dict.items(myD):
 #     print(key, value)
 #     time.sleep(1)
-                
-#------------------------------------------------------------------
+
+# ------------------------------------------------------------------
 
 # 9 Question: Input three integers x, y, z, and output them from small to large.
 
@@ -173,8 +172,8 @@
 
 # numbers.sort()
 # print (numbers)
-               
-#------------------------------------------------------------------
+
+# ------------------------------------------------------------------
 
 # 10 Question: Pause the output for 5 seconds and format the current time.
 
@@ -183,8 +182,8 @@
 # print (time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
 # time.sleep(10)
 # print (time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
-               
-#------------------------------------------------------------------
+
+# ------------------------------------------------------------------
 
 # 11 Question: There is a pair of rabbits. From the third month after birth, they give birth to a pair of rabbits every
 # month. After the third month, the little rabbits give birth to another pair of rabbits every month.
@@ -246,18 +245,224 @@
 
 # ------------------------------------------------------------------
 
+# extra practices 1-1
+
+# 1. Personal Information
+# Write a program that displays the following information:
+#  Your name
+#  Your address, with city, state, and ZIP
+#  Your telephone number
+#  Your college major
+
+# def personal_information():
+#     name = "ss"
+#     address = "123, 456, 789"
+#     phone_number = "123-456-789"
+#     college_major = "Python_develop"
+#
+#     print("Personal Information:")
+#     print(f"Name: {name}")
+#     print(f"Address: {address}")
+#     print(f"Phone Number: {phone_number}")
+#     print(f"College Major: {college_major}")
+#
+# if __name__ == "__main__":
+#     personal_information()
+
+# ------------------------------------------------------------------
+
+# extra practices 1-2
+
+# 2. Sales Prediction
+# A company has determined that its annual profit is typically 23 percent of total sales.
+# Write a program that asks the user to enter the projected amount of total sales, then
+# displays the profit that will be made from that amount.
+# Hint: Use the value 0.23 to represent 23 percent.
+
+# def profit_of_total():
+#     total_sales = float(input("Enter the total sales: $"))
+#
+#     profit = total_sales * 0.23
+#
+#     print(f"The profit is: ${profit:.2f}")
+#
+# if __name__ == "__main__":
+#     profit_of_total()
+
+
+# ------------------------------------------------------------------
+
+# extra practices 1-3
+
+# 3. Land Calculation
+# One acre of land is equivalent to 43,560 square feet. Write a program that asks the user
+# to enter the total square feet in a tract of land and calculates the number of acres in the tract.
+# Hint: Divide the amount entered by 43,560 to get the number of acres.
+
+# def acres_calculate():
+#     total_square_feet = float(input("Enter the total square feet: "))
+#     total_acres = round(total_square_feet / 43560, 2)
+#     print(f"The total acres of the land is: {total_acres}")
+#
+#
+# if __name__ == "__main__":
+#     acres_calculate()
+
+# ------------------------------------------------------------------
+
+# extra practices 1-4
+
+# 4. Total Purchase
+# A customer in a store is purchasing five items. Write a program that asks for the price of
+# each item, then displays the subtotal of the sale, the amount of sales tax, and the total.
+# Assume the sales tax is 7 percent.
+
+# def purchase_detail():
+#     item_1st = float(input("Enter the 1st item's price: "))
+#     item_2nd = float(input("Enter the 2nd item's price: "))
+#     item_3rd = float(input("Enter the 3rd item's price: "))
+#     item_4th = float(input("Enter the 4th item's price: "))
+#     item_5th = float(input("Enter the 5th item's price: "))
+#
+#     subtotal = item_1st + item_2nd + item_3rd + item_4th + item_5th
+#     sales_tax = subtotal * 0.07
+#     total = subtotal + sales_tax
+#
+#     print(f"The subtotal of the sale is: ${subtotal:.2f}")
+#     print(f"The amount of sales tax is: ${sales_tax:.2f}")
+#     print(f"The total cost is: ${total:.2f}")
+#
+# if __name__ == "__main__":
+#     purchase_detail()
+
+# ------------------------------------------------------------------
+
+# 5. Distance Traveled
+# Assuming there are no accidents or delays, the distance that a car travels down the
+# interstate can be calculated with the following formula:
+# Distance=Speed×Time
+# A car is traveling at 70 miles per hour. Write a program that displays the following:
+#  The distance the car will travel in 6 hours
+#  The distance the car will travel in 10 hours
+#  The distance the car will travel in 15 hours
+
+# def distance_traveled():
+#
+#     speed = 70
+#     distance_in_6 = speed * 6
+#     distance_in_10 = speed * 10
+#     distance_in_15 = speed * 15
+#
+#     print(f"The distance the car will travel in 6 hours is {distance_in_6}")
+#     print(f"The distance the car will travel in 10 hours is {distance_in_10}")
+#     print(f"The distance the car will travel in 15 hours is {distance_in_15}")
+#
+# if __name__ == "__main__":
+#     distance_traveled()
+
+# ------------------------------------------------------------------
+
+# 6. Sales Tax
+# Write a program that will ask the user to enter the amount of a purchase. The program
+# should then compute the state and county sales tax. Assume the state sales tax is 5
+# percent and the county sales tax is 2.5 percent. The program should display the amount
+# of the purchase, the state sales tax, the county sales tax, the total sales tax, and the
+# total of the sale (which is the sum of the amount of purchase plus the total sales tax).
+# Hint: Use the value 0.025 to represent 2.5 percent, and 0.05 to represent 5 percent.
+
+# def calculate_amount():
+#
+#     amount_purchase = float(input("Enter the amount of purchase: "))
+#
+#     state_tax = amount_purchase * 0.05
+#     county_tax = amount_purchase * 0.025
+#     total_tax = state_tax + county_tax
+#     total_sale = amount_purchase + total_tax
+#
+#     print(f"The amount purchase is {amount_purchase:.2f}")
+#     print(f"The state tax is {state_tax:.2f}")
+#     print(f"The county tax is {county_tax:.2f}")
+#     print(f"The total sales tax is {total_tax:.2f}")
+#     print(f"The total of sale is {total_sale:.2f}")
+#
+# if __name__ == "__main__":
+#     calculate_amount()
+
+# ------------------------------------------------------------------
+
+# 7. Miles-per-Gallon
+# A car's miles-per-gallon (MPG) can be calculated with the following formula:
+# MPG=Miles driven÷Gallons of gas used
+# Write a program that asks the user for the number of miles driven and the gallons of gas
+# used. It should calculate the car's MPG and display the result.
+
+# def miles_per_gallon():
+#
+#     miles = float(input("Enter the number of miles driven: "))
+#     gallons_used = float(input("Enter the gallons of gas used: "))
+#
+#     mpg = miles / gallons_used
+#
+#     print(f"The car's mile per gallon is {mpg:.2f}")
+#
+# if __name__ == "__main__":
+#     miles_per_gallon()
+
+# ------------------------------------------------------------------
+
+# 8. Tip, Tax, and Total
+# Write a program that calculates the total amount of a meal purchased at a restaurant.
+# The program should ask the user to enter the charge for the food, then calculate the
+# amounts of a 18 percent tip and 7 percent sales tax. Display each of these amounts and
+# the total.
+
+# def total_amount_meal():
+#
+#     food_cost = float(input("Enter the charge for the food is: "))
+#     tips = food_cost * 0.18
+#     sales_tax = food_cost * 0.07
+#
+#     total_cost = food_cost + tips + sales_tax
+#
+#     print(f"The food cost is {food_cost:.2f}")
+#     print(f"The tips of the food is {tips:.2f}")
+#     print(f"The sales tax of the food is {sales_tax:.2f}")
+#     print(f"The total cost of the food is {total_cost:.2f}")
+#
+# if __name__ == "__main__":
+#     total_amount_meal()
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
 # 13 Question:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
