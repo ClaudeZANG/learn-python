@@ -337,6 +337,8 @@
 
 # ------------------------------------------------------------------
 
+# extra practices 1-5
+
 # 5. Distance Traveled
 # Assuming there are no accidents or delays, the distance that a car travels down the
 # interstate can be calculated with the following formula:
@@ -361,6 +363,8 @@
 #     distance_traveled()
 
 # ------------------------------------------------------------------
+
+# extra practices 1-6
 
 # 6. Sales Tax
 # Write a program that will ask the user to enter the amount of a purchase. The program
@@ -390,6 +394,8 @@
 
 # ------------------------------------------------------------------
 
+# extra practices 1-7
+
 # 7. Miles-per-Gallon
 # A car's miles-per-gallon (MPG) can be calculated with the following formula:
 # MPG=Miles driven÷Gallons of gas used
@@ -409,6 +415,8 @@
 #     miles_per_gallon()
 
 # ------------------------------------------------------------------
+
+# extra practices 1-8
 
 # 8. Tip, Tax, and Total
 # Write a program that calculates the total amount of a meal purchased at a restaurant.
