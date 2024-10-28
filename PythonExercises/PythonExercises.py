@@ -442,22 +442,156 @@
 
 # ------------------------------------------------------------------
 
+# extra practices 1-9
+
+# 9. Celsius to Fahrenheit Temperature Converter
+# Write a program that converts Celsius temperatures to Fahrenheit temperatures. The
+# formula is as follows:
+# F=95C+32
+# The program should ask the user to enter a temperature in Celsius, then display the
+# temperature converted to Fahrenheit.
+
+# def c_to_f():
+#
+#     celsius = float(input("Enter the Celsius degree: "))
+#     fahrenheit = (celsius * 9) / 5 + 32
+#
+#     print(f"The Fahrenheit temperature is {fahrenheit:.2f}")
+#
+# if __name__ == "__main__":
+#     c_to_f()
+
+# ------------------------------------------------------------------
+
+# extra practices 1-10
+
+# 10. Ingredient Adjuster
+# A cookie recipe calls for the following ingredients:
+#  1.5 cups of sugar
+#  1 cup of butter
+#  2.75 cups of flour
+# The recipe produces 48 cookies with this amount of the ingredients. Write a program
+# that asks the user how many cookies he or she wants to make, then displays the number
+# of cups of each ingredient needed for the specified number of cookies.
+
+# def cookie_recipe():
+#
+#     cookie_needed = int(input("Enter how many cookies you need: "))
+#
+#     recipes = cookie_needed / 48
+#     sugar_cups = recipes * 1.5
+#     butter_cups = recipes * 1
+#     flour_cups = recipes * 2.75
+#
+#     print(f"To make {cookie_needed} cookies,")
+#     print((f"you need {sugar_cups:.2f} cups of sugar,"))
+#     print(f"{butter_cups:.2f} cups of butter,")
+#     print((f"and {flour_cups:.2f} cups of flour."))
+#
+# if __name__ == "__main__":
+#     cookie_recipe()
+
+# ------------------------------------------------------------------
+
+# extra practices 1-11
+
+# 11. Male and Female Percentages
+# Write a program that asks the user for the number of males and the number of females registered in a class.
+# The program should display the percentage of males and females in the class.
+# Hint: Suppose there are 8 males and 12 females in a class. There are 20 students in the
+# class. The percentage of males can be calculated as 8 ÷ 20 = 0.4, or 40%. The percentage
+# of females can be calculated as 12 ÷ 20 = 0.6, or 60%.
+
+# def class_gender_percentages():
+#
+#     male = int(input("Enter the male number: "))
+#     female = int(input("Enter the female number: "))
+#     total = male + female
+#
+#     male_pctg = (male / total) * 100
+#     female_pctg = (female / total) * 100
+#
+#     print(f"Male percentage is {male_pctg:.2f}%")
+#     print((f"Female percentage is {female_pctg:.2f}%"))
+#
+# if __name__ == "__main__":
+#     class_gender_percentages()
 
 
 # ------------------------------------------------------------------
 
+# extra practices 1-12
 
+# 12. Stock Transaction Program
+# Last month, Joe purchased some stock in Acme Software, Inc. Here are the details of the
+# purchase:
+#  The number of shares that Joe purchased was 2,000.
+#  When Joe purchased the stock, he paid $40.00 per share.
+#  Joe paid his stockbroker a commission that amounted to 3 percent of the
+# amount he paid for the stock.
+#  Two weeks later, Joe sold the stock. Here are the details of the sale:
+#  The number of shares that Joe sold was 2,000.
+#  He sold the stock for $42.75 per share.
+#  He paid his stockbroker another commission that amounted to 3 percent
+# of the amount he received for the stock.
+#  Write a program that displays the following information:
+#  The amount of money Joe paid for the stock.
+#  The amount of commission Joe paid his broker when he bought the stock.
+#  The amount for which Joe sold the stock.
+#  The amount of commission Joe paid his broker when he sold the stock.
+#  Display the amount of money that Joe had left when he sold the stock
+# and paid his broker (both times). If this amount is positive, then Joe made
+# a profit. If the amount is negative, then Joe lost money.
+
+# def stock_calculate():
+#
+#     purchase_total = 2000 * 40
+#     commission_buy = purchase_total * 0.03
+#     purchase_sold = 42.75 * 2000
+#     benefit_sale = purchase_sold - purchase_total - commission_buy
+#     commission_sale = purchase_sold * 0.03
+#
+#     benefit_final = benefit_sale - commission_sale
+#
+#     print(f"The purchase total cost is {purchase_total}")
+#     print(f"The commission paid to broker when bought is {commission_buy:.2f}")
+#     print(f"The amount when sold is {purchase_sold}")
+#     print(f"The commission paid to broker when sold is {commission_sale:.2f}")
+#     print(f"The final money left is {benefit_final}")
+#
+#     if benefit_final > 0:
+#         print(f"Joe made a profit.")
+#     elif benefit_final <0:
+#         print(f"Joe lost money.")
+#     else:
+#         print(f"Joe broke even.")
+#
+# if __name__ == "__main__":
+#     stock_calculate()
 
 # ------------------------------------------------------------------
 
+# extra practices 1-13
 
-
-# ------------------------------------------------------------------
-
-
-
-# ------------------------------------------------------------------
-
+# 13. Planting Grapevines
+# A vineyard owner is planting several new rows of grapevines, and needs to know how
+# many grapevines to plant in each row. She has determined that after measuring the
+# length of a future row, she can use the following formula to calculate the number of
+# vines that will fit in the row, along with the trellis end-post assemblies that will need to
+# be constructed at each end of the row:
+# V=R-2ES
+# The terms in the formula are:
+#  V is the number of grapevines that will fit in the row.
+#  R is the length of the row, in feet.
+#  E is the amount of space, in feet, used by an end-post assembly.
+#  S is the space between vines, in feet.
+#  Write a program that makes the calculation for the vineyard owner. The program
+# should ask the user to input the following:
+#  The length of the row, in feet
+#  The amount of space used by an end-post assembly, in feet
+#  The amount of space between the vines, in feet
+#  Once the input data has been entered, the program should calculate and display
+# the number of grapevines that will fit in the row.
 
 
 # ------------------------------------------------------------------
