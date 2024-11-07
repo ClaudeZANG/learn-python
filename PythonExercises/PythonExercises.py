@@ -1,5 +1,5 @@
 ﻿# 1 Question: There are four numbers: 1, 2, 3, 4. How many different three-digit numbers can be formed without repeated numbers? What are the numbers?
-
+import math
 # for i in range(1,5):
 #     for j in range(1,5):
 #         for k in range(1,5):
@@ -593,18 +593,490 @@
 #  Once the input data has been entered, the program should calculate and display
 # the number of grapevines that will fit in the row.
 
+# def grape_calculate():
+#
+#     r = float(input("Enter the length of the row, in feet: "))
+#     e = float(input("Enter the amount of space, in feet, that used by an end-post assembly: "))
+#     s = float(input("Enter the space between vines, in feet: "))
+#
+#     v = int(r - 2 * e * s)
+#
+#     print(f"The number of grapevines that will fit in the row is {v}")
+#
+# if __name__ == "__main__":
+#     grape_calculate()
+
 
 # ------------------------------------------------------------------
 
+# extra practices 1-14
+
+# 14. Compound Interest
+# When a bank account pays compound interest, it pays interest not only on the principal
+# amount that was deposited into the account, but also on the interest that has
+# accumulated over time. Suppose you want to deposit some money into a savings
+# account, and let the account earn compound interest for a certain number of years. The
+# formula for calculating the balance of the account after a specified number of years is:
+# A=P(1+rn)nt
+# The terms in the formula are:
+#  A is the amount of money in the account after the specified number of
+# years.
+#  P is the principal amount that was originally deposited into the account.
+#  r is the annual interest rate.
+#  n is the number of times per year that the interest is compounded.
+#  t is the specified number of years.
+# Write a program that makes the calculation for you. The program should ask the user to
+# input the following:
+#  The amount of principal originally deposited into the account
+#  The annual interest rate paid by the account
+#  The number of times per year that the interest is compounded (For example, if
+# interest is compounded monthly, enter 12. If interest is compounded quarterly,
+# enter 4.)
+#  The number of years the account will be left to earn interest
+# Once the input data has been entered, the program should calculate and display the
+# amount of money that will be in the account after the specified number of years.
+
+# def compound_interest():
+#
+#     p = float(input("Enter the principal amount that was deposited: "))
+#     r = float(input("Enter the annual interest rate: "))
+#     n = int(input("Enter the specified times per year that the interest is compounded: "))
+#     t = int(input("Enter the specified number of years: "))
+#
+#     a = p * (1 + r * n) ** (n * t)
+#
+#     print(f"The amount of money that will be after the specified years is ${a:.2f}")
+#
+# if __name__ == "__main__":
+#     compound_interest()
+
+# ------------------------------------------------------------------
+
+# extra practices 1-15
+
+# 15. Turtle Graphics Drawings
+# Use the turtle graphics library to write programs that reproduce each of the designs
+# shown in Figure 2-34.
+
+# import math
+# import turtle
+# import tkinter as tk
+# from tkinter import simpledialog, messagebox
+#
+# def pen_draw():
+#     pen = turtle.Turtle()
+#     pen.color("blue")
+#     pen.pensize(3)
+#     pen.speed(4)
+#     return pen
+#
+# def draw_square(angle, length):
+#     pen = pen_draw()
+#     pen.right(angle)
+#     for _ in range(4):
+#         pen.forward(length)
+#         pen.right(90)
+#     turtle.done()
+#
+# def draw_triangle(angle_0, inner_angle_1, inner_angle_2, length_1):
+#     pen = pen_draw()
+#
+#     # 计算第三个内角
+#     inner_angle_3 = 180 - inner_angle_1 - inner_angle_2
+#
+#     # 检查角度是否有效
+#     if inner_angle_3 <= 0:
+#         print("输入的角度无法构成三角形。")
+#         return
+#
+#     inner_angle_1_rad = math.radians(inner_angle_1)
+#     inner_angle_3_rad = math.radians(inner_angle_3)
+#
+#     # Calculate the length of the second side using the law of sines
+#     length_2 = (length_1 * math.sin(inner_angle_1_rad)) / math.sin(inner_angle_3_rad)
+#
+#     # 设置初始位置和方向
+#     pen.penup()
+#     pen.right(angle_0)  # 起始旋转角度
+#     pen.goto(0, 0)
+#     pen.pendown()
+#
+#     # 点 A 的坐标
+#     a_x, a_y = pen.position()
+#
+#     # 绘制第一条边（从 A 到 B）
+#     pen.forward(length_1)
+#
+#     # 转向并绘制第二条边（从 B 到 C）
+#     pen.left(180 - inner_angle_2)
+#     pen.forward(length_2)
+#
+#     # 直接返回起点 A，完成三角形的闭合
+#     pen.goto(a_x, a_y)
+#
+#     turtle.done()
+#
+# def draw_circle(radius):
+#     pen = pen_draw()
+#     pen.circle(radius)
+#     turtle.done()
+#
+# def start_drawing(choice):
+#     turtle.clearscreen()
+#
+#     if choice == "Square":
+#         angle = simpledialog.askfloat("Input", "Enter the start angle of the square: ")
+#         length = simpledialog.askfloat("Input", "Enter the length of the square: ")
+#         if angle is not None and length is not None:
+#             draw_square(angle, length)
+#
+#     elif choice == "Triangle":
+#         angle_0 = simpledialog.askfloat("Input", "Enter the initial rotation angle of the triangle: ")
+#         inner_angle_1 = simpledialog.askfloat("Input", "Enter the 1st angle of the triangle base: ")
+#         inner_angle_2 = simpledialog.askfloat("Input", "Enter the 2nd angle of the triangle base: ")
+#         length_1 = simpledialog.askfloat("Input", "Enter the length of the base of the triangle: ")
+#
+#         if None not in (angle_0, inner_angle_1, inner_angle_2, length_1):
+#             draw_triangle(angle_0, inner_angle_1, inner_angle_2, length_1)
+#         else:
+#             messagebox.showerror("Error", "All inputs are required.")
+#
+#     elif choice == "Circle":
+#         radius = simpledialog.askfloat("Input", "Enter the radius of the circle: ")
+#         if radius:
+#             draw_circle(radius)
+#     else:
+#         messagebox.showerror("Error", "Invalid choice.")
+#
+# def create_gui():
+#     window = tk.Tk()
+#     window.title("Turtle Graphics Drawing")
+#
+#     label = tk.Label(window, text="Select a shape to draw: ")
+#     label.pack(pady=10)
+#
+#     shapes = ["Square", "Triangle", "Circle"]
+#     var = tk.StringVar(window)
+#     var.set(shapes[0])
+#
+#     dropdown = tk.OptionMenu(window, var, *shapes)
+#     dropdown.pack(pady=10)
+#
+#     draw_button = tk.Button(
+#         window,
+#         text="Draw",
+#         command=lambda: start_drawing(var.get())
+#     )
+#     draw_button.pack(pady=10)
+#
+#     quit_button = tk.Button(window, text="Quit", command=window.quit)
+#     quit_button.pack(pady=10)
+#
+#     window.mainloop()
+#
+# if __name__ == "__main__":
+#     create_gui()
+
+# ------------------------------------------------------------------
+
+# extra practices 2-1
+
+# Day of the Week
+# Write a program that asks the user for a number in the range of 1 through 7. The
+# program should display the corresponding day of the week, where 1 = Monday, 2 =
+# Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, and 7 = Sunday. The
+# program should display an error message if the user enters a number that is outside the
+# range of 1 through 7.
+
+# def project_week():
+#     # ask user to input a number
+#     day_number = int(input("Enter a number that between 1 to 7: "))
+#
+#     days = {
+#         1: "Monday",
+#         2: "Tuesday",
+#         3: "Wednesday",
+#         4: "Thursday",
+#         5: "Friday",
+#         6: "Saturday",
+#         7: "Sunday"
+#     }
+#
+#     if 1 <= day_number <= 7:
+#         print(f"The day is {days[day_number]}")
+#     else:
+#         print("Error: The number must be between 1 and 7.")
+#
+# if __name__ == "__main__":
+#     project_week()
+
+# ------------------------------------------------------------------
+
+# extra practices 2-2
+
+# Areas of Rectangles
+# The area of a rectangle is the rectangle’s length times its width. Write a program that
+# asks for the length and width of two rectangles. The program should tell the user which
+# rectangle has the greater area, or if the areas are the same.
+
+# def project_rectangles():
+#     try:
+#         rectangles_1_w, rectangles_1_h = map(float, input(
+#             "Enter the width and height of the 1st rectangle, separated by a space: "
+#         ).split())
+#
+#         rectangles_2_w, rectangles_2_h = map(float, input(
+#             "Enter the width and height of the 2nd rectangle, separated by a space: "
+#         ).split())
+#
+#         rectangles_1_area = rectangles_1_w * rectangles_1_h
+#         rectangles_2_area = rectangles_2_w * rectangles_2_h
+#
+#         if rectangles_1_area > rectangles_2_area:
+#             print(f"The 1st rectangle has larger area.")
+#         elif rectangles_1_area < rectangles_2_area:\
+#             print(f"The 2rd rectangles has larger area.")
+#         else:
+#             print(f"Both rectangles have the same area. ")
+#     except ValueError:
+#             print("Invalid input. Please enter numeric values for width and height.")
+#
+# if __name__ == "__main__":
+#     project_rectangles()
+
+# ------------------------------------------------------------------
+
+# extra practices 2-3
+
+# Age Classifier
+# Write a program that asks the user to enter a person’s age. The program should display
+# a message indicating whether the person is an infant, a child, a teenager, or an adult.
+# Following are the guidelines:
+#  If the person is 1 year old or less, he or she is an infant.
+#  If the person is older than 1 year, but younger than 13 years, he or she is a child.
+#  If the person is at least 13 years old, but less than 20 years old, he or she is a teenager.
+#  If the person is at least 20 years old, he or she is an adult.
+
+# def project_age():
+#     try:
+#         age = int(input("Enter the age: "))
+#
+#         if age <= 1:
+#             print("He/she is an infant.")
+#         elif 1 < age < 13:
+#             print("He/she is a child.")
+#         elif 13 <= age < 20:
+#             print("He/she is a teenager.")
+#         else:
+#             print("He/she is an adult.")
+#
+#     except ValueError:
+#         print("Invalid input. Please enter numeric values for age.")
+#
+# if __name__ == "__main__":
+#     project_age()
+
+# ------------------------------------------------------------------
+
+# extra practices 2-4
+
+# Roman Numerals
+# Write a program that prompts the user to enter a number within the range of 1 through
+# 10. The program should display the Roman numeral version of that number. If the
+# number is outside the range of 1 through 10, the program should display an error
+# message. The following table shows the Roman numerals for the numbers 1 through 10.
+
+# def project_roman():
+#     try:
+#         number = int(input("Enter a number between 1 and 10: "))
+#
+#         if 1 <= number <= 10:
+#             roman = {
+#                 1: "I",
+#                 2: "II",
+#                 3: "III",
+#                 4: "IV",
+#                 5: "V",
+#                 6: "VI",
+#                 7: "VII",
+#                 8: "VIII",
+#                 9: "IX",
+#                 10: "X"
+#             }
+#             print(f"The Roman numeral for {number} is {roman[number]}.")
+#         else:
+#             print("Error: The number is outside the range of 1 through 10.")
+#
+#     except ValueError:
+#         print("Invalid input. Please enter a numeric value between 1 and 10.")
+#
+# if __name__ == "__main__":
+#     project_roman()
 
 
 # ------------------------------------------------------------------
 
+# extra practices 2-5
+
+# Mass and Weight
+# Scientists measure an object’s mass in kilograms and its weight in newtons. If you know
+# the amount of mass of an object in kilograms, you can calculate its weight in newtons
+# with the following formula:
+# weight=mass×9.8
+# Write a program that asks the user to enter an object’s mass, then calculates its weight.
+# If the object weighs more than 500 newtons, display a message indicating that it is too
+# heavy. If the object weighs less than 100 newtons, display a message indicating that it is
+# too light.
+
+# def project_mass():
+#     try:
+#         mass = float(input("Enter the object's mass is: "))
+#
+#         weight = mass * 9.8
+#
+#         if weight < 100:
+#             print(f"The object's weight is {weight} N,it's too light.")
+#         elif 500 <= weight:
+#             print(f"The object's weight is {weight} N,it's too heavy.")
+#         else:
+#             print(f"The object's weight is {weight} N,the weight is good.")
+#
+#     except ValueError:
+#         print("Invalid input. Please enter a numeric value for the mass.")
+#
+# if __name__ == "__main__":
+#     project_mass()
 
 
 # ------------------------------------------------------------------
 
+# extra practices 2-6
+
+# Magic Dates
+# The date June 10, 1960, is special because when it is written in the following format, the
+# month times the day equals the year:
+#  6/10/60
+#  Design a program that asks the user to enter a month (in numeric form), a day,
+# and a two-digit year. The program should then determine whether the month
+# times the day equals the year. If so, it should display a message saying the date is
+# magic. Otherwise, it should display a message saying the date is not magic.
+
+# def magic_dates():
+#     try:
+#         # 获取用户输入的月份、日期和年份
+#         month, day, year = map(int, input(
+#             "Enter a month (in numeric form), a day, and a two-digit year (e.g., 60 for 1960), separated by spaces: "
+#         ).split())
+#
+#         # 检查年份是否为两位数
+#         if not (0 <= year <= 99):
+#             print("Invalid input. Please enter a two-digit year (00-99).")
+#             return
+#
+#         # 判断日期是否为魔法日期
+#         if month * day == year:
+#             print("The date is a magic date.")
+#         else:
+#             print("The date is not magic.")
+#
+#     except ValueError:
+#         print("Invalid input. Please enter numeric values for month, day, and year.")
+#
+# if __name__ == "__main__":
+#     magic_dates()
 
 
+# ------------------------------------------------------------------
 
-# 13 Question:
+# extra practices 2-7
+
+# Color Mixer
+# The colors red, blue, and yellow are known as the primary colors because they cannot
+# be made by mixing other colors. When you mix two primary colors, you get a secondary
+# color, as shown here:
+#  When you mix red and blue, you get purple.
+#  When you mix red and yellow, you get orange.
+#  When you mix blue and yellow, you get green.
+#  Design a program that prompts the user to enter the names of two primary
+# colors to mix. If the user enters anything other than “red,” “blue,” or “yellow,”
+# the program should display an error message. Otherwise, the program should
+# display the name of the secondary color that results.
+
+def color_mixer():
+    # 获取用户输入的两种颜色
+    color_1, color_2 = map(str.lower, input(
+        "Enter the names of two primary colors to mix, separated by spaces: "
+    ).split())
+
+    # 定义有效的原色
+    primary_colors = {"red", "blue", "yellow"}
+
+    # 检查输入的颜色是否都是原色
+    if color_1 not in primary_colors or color_2 not in primary_colors:
+        print("Invalid input. Please enter 'red', 'blue', or 'yellow'.")
+        return
+
+    # 检查颜色组合并输出次级颜色
+    if (color_1 == "red" and color_2 == "blue") or (color_1 == "blue" and color_2 == "red"):
+        print("The result is purple.")
+    elif (color_1 == "red" and color_2 == "yellow") or (color_1 == "yellow" and color_2 == "red"):
+        print("The result is orange.")
+    elif (color_1 == "blue" and color_2 == "yellow") or (color_1 == "yellow" and color_2 == "blue"):
+        print("The result is green.")
+    else:
+        print("The same colors were entered, which does not produce a secondary color.")
+
+if __name__ == "__main__":
+    color_mixer()
+
+
+# ------------------------------------------------------------------
+
+# extra practices 2-8
+
+# Hot Dog Cookout Calculator
+# Assume hot dogs come in packages of 10, and hot dog buns come in packages of 8.
+# Write a program that calculates the number of packages of hot dogs and the number of
+# packages of hot dog buns needed for a cookout, with the minimum amount of leftovers.
+# The program should ask the user for the number of people attending the cookout and
+# the number of hot dogs each person will be given. The program should display the
+# following details:
+#  The minimum number of packages of hot dogs required
+#  The minimum number of packages of hot dog buns required
+#  The number of hot dogs that will be left over
+#  The number of hot dog buns that will be left over
+#
+# import math
+#
+# def project_hotdog():
+#     try:
+#         # 获取用户输入的人数和每人需要的热狗数量
+#         num_ppl, ppl_hotdogs = map(int, input(
+#             "Enter the number of people and the number of hot dogs per person, separated by spaces: "
+#         ).split())
+#
+#         # 计算总热狗数量
+#         total_hd = num_ppl * ppl_hotdogs
+#
+#         # 最小的热狗包数和热狗面包包数（向上取整确保满足需求）
+#         hotdog_packages = math.ceil(total_hd / 10)
+#         bun_packages = math.ceil(total_hd / 8)
+#
+#         # 计算剩余的热狗和热狗面包
+#         hd_leftover = (hotdog_packages * 10) - total_hd
+#         # hd_leftover = 10 - (total_hd % 10) if total_hd % 10 != 0 else 0
+#         # hd_leftover = 10 - (total_hd % 10) if not total_hd % 10 == 0 else 0
+#         bun_leftover = (bun_packages * 8) - total_hd
+#
+#         # 输出结果
+#         print(f"The minimum number of packages of hot dogs required is {hotdog_packages}.")
+#         print(f"The minimum number of packages of hot dog buns required is {bun_packages}.")
+#         print(f"The number of hot dogs that will be left over is {hd_leftover}.")
+#         print(f"The number of hot dog buns that will be left over is {bun_leftover}.")
+#
+#     except ValueError:
+#         print("Invalid input. Please enter numeric values for the number of people and hot dogs per person.")
+#
+# if __name__ == "__main__":
+#     project_hotdog()
+
